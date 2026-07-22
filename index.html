@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>El Punto Marino — Bar &amp; Restaurante · El Rodadero, Santa Marta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Outfit:wght@200;300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --arena:#FFF6E8;
+  --arena-2:#FFEDD3;
+  --coral:#FF5A3C;
+  --mango:#FFB627;
+  --turquesa:#00A9A5;
+  --profundo:#0A3A4A;
+  --tinta:#062E3F;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--arena);color:var(--tinta);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;
+  padding:1rem clamp(1rem,4vw,3rem);transition:.35s;
+  background:linear-gradient(180deg,rgba(6,46,63,.55),transparent)}
+nav.solid{background:rgba(255,246,232,.96);backdrop-filter:blur(14px);box-shadow:0 6px 30px rgba(6,46,63,.12)}
+.logo{font-family:'Fraunces',serif;font-weight:900;font-size:1.2rem;letter-spacing:-.02em;color:#fff;transition:.35s}
+nav.solid .logo{color:var(--tinta)}
+.logo b{color:var(--mango);font-weight:900}
+nav.solid .logo b{color:var(--coral)}
+.nav-links{display:flex;gap:1.7rem;list-style:none;align-items:center}
+.nav-links a{color:#fff;text-decoration:none;font-size:.85rem;font-weight:400;opacity:.85;transition:.25s}
+nav.solid .nav-links a{color:var(--tinta);opacity:.7}
+.nav-links a:hover{opacity:1;color:var(--mango)}
+nav.solid .nav-links a:hover{color:var(--coral)}
+@media(max-width:860px){.nav-links{display:none}}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:center;justify-content:center;perspective:1000px}
+.hero-bg{position:absolute;inset:-6%;background-size:cover;background-position:center 60%;transform:scale(1.1);
+  will-change:transform;filter:saturate(1.2) contrast(1.04)}
+.hero::after{content:"";position:absolute;inset:0;z-index:2;
+  background:linear-gradient(175deg,rgba(255,140,66,.34) 0%,rgba(255,90,60,.28) 34%,rgba(6,46,63,.55) 74%,var(--arena) 100%)}
+.hero-in{position:relative;z-index:5;text-align:center;padding:0 1.5rem;max-width:980px}
+.kicker{display:inline-block;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:#fff;
+  background:rgba(6,46,63,.4);padding:.55rem 1.3rem;border-radius:100px;margin-bottom:1.6rem;backdrop-filter:blur(8px)}
+.hero h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2.9rem,9.5vw,7rem);line-height:.9;letter-spacing:-.035em;
+  color:#fff;text-shadow:0 6px 40px rgba(6,46,63,.55)}
+.hero h1 em{font-style:normal;display:block;color:var(--mango);text-shadow:0 6px 40px rgba(184,52,31,.5)}
+.tagline{margin:1.5rem auto 0;font-size:clamp(1rem,2.1vw,1.25rem);font-weight:300;line-height:1.6;max-width:44ch;
+  color:rgba(255,255,255,.96);text-shadow:0 2px 18px rgba(6,46,63,.5)}
+.hero-btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;margin-top:2.3rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 1.9rem;border-radius:100px;text-decoration:none;
+  font-weight:600;font-size:.95rem;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn-wa{background:#25D366;color:#fff;box-shadow:0 10px 36px rgba(37,211,102,.45)}
+.btn-line{background:rgba(255,255,255,.18);color:#fff;border:1.5px solid rgba(255,255,255,.55);backdrop-filter:blur(10px)}
+.btn-line:hover{background:rgba(255,255,255,.28)}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:5;color:#fff;font-size:.68rem;
+  letter-spacing:.28em;text-transform:uppercase;opacity:.75;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(9px)}}
+
+/* TIRA */
+.tira{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(1.4rem,5vw,4.5rem);
+  padding:1.6rem clamp(1rem,4vw,3rem);background:var(--profundo);color:var(--arena)}
+.tira div{text-align:center}
+.tira b{display:block;font-family:'Fraunces',serif;font-size:1.2rem;color:var(--mango);margin-bottom:.15rem}
+.tira span{font-size:.75rem;font-weight:200;opacity:.75}
+
+/* SECCIONES */
+.sec{padding:clamp(3.8rem,9vw,7rem) clamp(1rem,5vw,4rem);max-width:1240px;margin:0 auto}
+.eyebrow{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--coral);font-weight:600;display:block;margin-bottom:.9rem}
+h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2.1rem,5.6vw,3.6rem);line-height:1;letter-spacing:-.03em}
+h2 .hl{color:var(--turquesa)}
+.lead{margin-top:1rem;font-weight:300;font-size:1.02rem;line-height:1.7;opacity:.72;max-width:54ch}
+
+/* GALERIA 3D */
+.gal{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;margin-top:2.8rem;perspective:1400px}
+.gal figure{position:relative;overflow:hidden;border-radius:18px;transform-style:preserve-3d;
+  transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s;box-shadow:0 16px 44px rgba(6,46,63,.2)}
+.gal figure:hover{box-shadow:0 30px 70px rgba(6,46,63,.32)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.gal figure:hover img{transform:scale(1.06)}
+.g1{grid-column:span 7;aspect-ratio:16/11}
+.g2{grid-column:span 5;aspect-ratio:4/5}
+.g3{grid-column:span 5;aspect-ratio:4/3}
+.g4{grid-column:span 7;aspect-ratio:16/10}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.4rem 1.4rem 1.2rem;z-index:2;color:#fff;
+  background:linear-gradient(transparent,rgba(6,46,63,.9));font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem}
+@media(max-width:760px){.g1,.g2,.g3,.g4{grid-column:span 12;aspect-ratio:4/3}}
+
+/* CARTA */
+#carta{background:
+  radial-gradient(ellipse 70% 45% at 15% 0%,rgba(255,182,39,.18),transparent 62%),
+  radial-gradient(ellipse 60% 45% at 88% 55%,rgba(0,169,165,.14),transparent 62%),
+  var(--arena-2);max-width:none}
+.carta-in{max-width:1140px;margin:0 auto}
+.cat{margin-top:3.2rem}
+.cat-t{display:flex;align-items:baseline;gap:1rem;margin-bottom:.35rem}
+.cat-t h3{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(1.5rem,3.4vw,2.1rem);color:var(--coral);white-space:nowrap;letter-spacing:-.02em}
+.cat-t .rule{flex:1;height:2px;background:linear-gradient(90deg,rgba(255,90,60,.35),transparent)}
+.cat-n{font-size:.85rem;font-weight:300;opacity:.6;margin-bottom:1.4rem}
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:0 3rem}
+.it{display:flex;align-items:baseline;gap:.7rem;padding:.8rem 0;border-bottom:1px dotted rgba(6,46,63,.2);transition:.25s}
+.it:hover{border-color:var(--turquesa);padding-left:.4rem}
+.it-n{font-size:1rem;font-weight:400}
+.it-n small{display:block;font-size:.76rem;font-weight:300;opacity:.55;margin-top:.18rem}
+.dots{flex:1;border-bottom:1px dotted rgba(6,46,63,.28);transform:translateY(-5px)}
+.it-p{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--coral);white-space:nowrap}
+.tip{margin-top:.9rem;font-size:.8rem;font-weight:300;opacity:.6;font-style:italic}
+
+/* VISITA */
+.visita{display:grid;grid-template-columns:1.05fr 1fr;gap:3rem;align-items:center}
+@media(max-width:840px){.visita{grid-template-columns:1fr}}
+.dato{padding:1.1rem 0;border-bottom:1px solid rgba(6,46,63,.13)}
+.dato-l{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;opacity:.5;margin-bottom:.35rem}
+.dato-v{font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem}
+.dato-v em{display:block;font-family:'Outfit';font-style:normal;font-size:.87rem;font-weight:300;opacity:.65;margin-top:.22rem}
+.visita-img{border-radius:18px;overflow:hidden;box-shadow:0 26px 66px rgba(6,46,63,.3);
+  transform:rotateY(-5deg) rotateX(2deg);transition:transform .6s}
+.visita-img:hover{transform:rotateY(0) rotateX(0)}
+
+/* FOOTER */
+footer{background:var(--profundo);color:rgba(255,246,232,.8);padding:3.4rem clamp(1rem,5vw,4rem) 7rem;text-align:center}
+footer .logo{color:var(--arena);font-size:1.9rem;margin-bottom:.7rem}
+footer .logo b{color:var(--mango)}
+footer p{font-size:.87rem;font-weight:300;line-height:1.9}
+
+/* WHATSAPP */
+.wa{position:fixed;right:1.4rem;bottom:1.4rem;z-index:300;display:flex;align-items:center;gap:.6rem;
+  background:#25D366;color:#fff;text-decoration:none;padding:1rem 1.5rem;border-radius:100px;font-weight:600;font-size:.94rem;
+  box-shadow:0 12px 40px rgba(37,211,102,.5);animation:pulso 3s ease-in-out infinite}
+@keyframes pulso{0%,90%,100%{transform:scale(1)}94%{transform:scale(1.07)}}
+.wa:hover{animation-play-state:paused;transform:scale(1.06)}
+@media(max-width:520px){.wa{right:1rem;bottom:1rem;padding:.9rem 1.25rem;font-size:.88rem}}
+
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="logo">El Punto <b>Marino</b></div>
+  <ul class="nav-links">
+    <li><a href="#lugar">El lugar</a></li>
+    <li><a href="#carta">La carta</a></li>
+    <li><a href="#visita">Visítanos</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg" id="pbg" style="background-image:url('fachada.jpg')"></div>
+  <div class="hero-in">
+    <span class="kicker">El Rodadero · Santa Marta</span>
+    <h1>Bar &amp; Restaurante<em>sobre la arena</em></h1>
+    <p class="tagline">Mariscos frescos, cazuelas y cocteles con el mar de frente. Desde las 10 de la mañana hasta la 1 de la madrugada.</p>
+    <div class="hero-btns">
+      <a class="btn btn-wa" href="https://wa.me/573136977712" target="_blank" rel="noopener">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20"/></svg>
+        Pedir por WhatsApp
+      </a>
+      <a class="btn btn-line" href="#carta">Ver la carta</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Desliza</div>
+</section>
+
+<div class="tira">
+  <div><b>10 a.m. — 1 a.m.</b><span>Todos los días</span></div>
+  <div><b>Pie de playa</b><span>El Rodadero</span></div>
+  <div><b>Pescado del día</b><span>Fresco de la mañana</span></div>
+  <div><b>Bar completo</b><span>Cocteles y cerveza</span></div>
+</div>
+
+<section class="sec" id="lugar">
+  <div class="reveal">
+    <span class="eyebrow">El lugar</span>
+    <h2>Donde el mar<br><span class="hl">se sienta contigo</span></h2>
+    <p class="lead">Mesas sobre la arena, luces de colores y el sol cayendo detrás de las palmeras. De día se almuerza con brisa; de noche esto se enciende.</p>
+  </div>
+  <div class="gal reveal">
+    <figure class="g1"><img src="mesas.jpg" alt="Mesas de El Punto Marino con el atardecer sobre el mar" loading="lazy"><figcaption>El atardecer desde la mesa</figcaption></figure>
+    <figure class="g2"><img src="neon.jpg" alt="Fachada iluminada de noche" loading="lazy"><figcaption>De noche, en neón</figcaption></figure>
+    <figure class="g3"><img src="noche.jpg" alt="Terraza sobre la arena iluminada" loading="lazy"><figcaption>Terraza sobre la arena</figcaption></figure>
+    <figure class="g4"><img src="fachada.jpg" alt="Entrada entre palmeras al atardecer" loading="lazy"><figcaption>La entrada, entre palmeras</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec" id="carta">
+ <div class="carta-in">
+  <div class="reveal">
+    <span class="eyebrow">La carta</span>
+    <h2>Todo lo que sale<br><span class="hl">de la cocina</span></h2>
+    <p class="lead">Precios en pesos colombianos. Los mariscos van con arroz de coco o blanco, papas o patacones.</p>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Para empezar</h3><div class="rule"></div></div>
+    <p class="cat-n">Lo que se pide apenas uno se sienta</p>
+    <div class="items">
+      <div class="it"><span class="it-n">Ceviche de camarón</span><span class="dots"></span><span class="it-p">$28.000</span></div>
+      <div class="it"><span class="it-n">Coctel de camarón</span><span class="dots"></span><span class="it-p">$25.000</span></div>
+      <div class="it"><span class="it-n">Chicharrón con yuca</span><span class="dots"></span><span class="it-p">$20.000</span></div>
+      <div class="it"><span class="it-n">Anillos de calamar</span><span class="dots"></span><span class="it-p">$20.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Menú del día</h3><div class="rule"></div></div>
+    <p class="cat-n">Todos con sopa de pescado, arroz de coco, patacones y ensalada</p>
+    <div class="items">
+      <div class="it"><span class="it-n">Menú mojarra<small>250 gr</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Menú cojinúa<small>250 gr</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Menú sierra<small>3 postas</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Menú lebranche<small>3 postas</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Menú pechuga<small>160 gr</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Menú carne<small>160 gr</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Menú cerdo<small>160 gr</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Pescados de libra</h3><div class="rule"></div></div>
+    <p class="cat-n">500 gramos cada uno</p>
+    <div class="items">
+      <div class="it"><span class="it-n">Mojarra</span><span class="dots"></span><span class="it-p">$45.000</span></div>
+      <div class="it"><span class="it-n">Lebranche</span><span class="dots"></span><span class="it-p">$45.000</span></div>
+      <div class="it"><span class="it-n">Sierra</span><span class="dots"></span><span class="it-p">$45.000</span></div>
+      <div class="it"><span class="it-n">Róbalo</span><span class="dots"></span><span class="it-p">$45.000</span></div>
+      <div class="it"><span class="it-n">Pargo rojo</span><span class="dots"></span><span class="it-p">$55.000</span></div>
+    </div>
+    <p class="tip">Frito o sudado suma $7.000</p>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Mariscos</h3><div class="rule"></div></div>
+    <p class="cat-n">Lo que nos trajo aquí</p>
+    <div class="items">
+      <div class="it"><span class="it-n">Langosta al ajillo o asada</span><span class="dots"></span><span class="it-p">$90.000</span></div>
+      <div class="it"><span class="it-n">Langosta en salsa de mariscos</span><span class="dots"></span><span class="it-p">$110.000</span></div>
+      <div class="it"><span class="it-n">Langosta en salsa de camarón</span><span class="dots"></span><span class="it-p">$100.000</span></div>
+      <div class="it"><span class="it-n">Langostinos al ajillo o apanados</span><span class="dots"></span><span class="it-p">$70.000</span></div>
+      <div class="it"><span class="it-n">Camarones al ajillo o apanados</span><span class="dots"></span><span class="it-p">$45.000</span></div>
+      <div class="it"><span class="it-n">Pulpo al ajillo o apanado</span><span class="dots"></span><span class="it-p">$60.000</span></div>
+      <div class="it"><span class="it-n">Cazuela de mariscos</span><span class="dots"></span><span class="it-p">$50.000</span></div>
+      <div class="it"><span class="it-n">Cazuela de mariscos gratinada</span><span class="dots"></span><span class="it-p">$55.000</span></div>
+      <div class="it"><span class="it-n">Cazuela especial con langostinos</span><span class="dots"></span><span class="it-p">$60.000</span></div>
+      <div class="it"><span class="it-n">Arroz con mariscos</span><span class="dots"></span><span class="it-p">$45.000</span></div>
+      <div class="it"><span class="it-n">Arroz con camarón</span><span class="dots"></span><span class="it-p">$45.000</span></div>
+      <div class="it"><span class="it-n">Arroz de langostinos</span><span class="dots"></span><span class="it-p">$50.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Asados a la parrilla</h3><div class="rule"></div></div>
+    <p class="cat-n">Para el que viene por la brasa</p>
+    <div class="items">
+      <div class="it"><span class="it-n">Pechuga a la parrilla<small>250 gr · arroz de coco, patacones y ensalada</small></span><span class="dots"></span><span class="it-p">$34.000</span></div>
+      <div class="it"><span class="it-n">Carne a la parrilla<small>250 gr · arroz de coco, patacones y ensalada</small></span><span class="dots"></span><span class="it-p">$34.000</span></div>
+      <div class="it"><span class="it-n">Churrasco lomo ancho<small>400 gr · ensalada y papa a la francesa</small></span><span class="dots"></span><span class="it-p">$43.000</span></div>
+      <div class="it"><span class="it-n">Bandeja mixta<small>Carne y pechuga, o carne y cerdo</small></span><span class="dots"></span><span class="it-p">$34.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Pastas</h3><div class="rule"></div></div>
+    <p class="cat-n">Hechas al momento</p>
+    <div class="items">
+      <div class="it"><span class="it-n">Pasta en salsa de mariscos</span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Pasta en salsa de camarón</span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Pasta Alfredo con pollo</span><span class="dots"></span><span class="it-p">$25.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Comida rápida</h3><div class="rule"></div></div>
+    <p class="cat-n">Para la mesa que no quiere marisco</p>
+    <div class="items">
+      <div class="it"><span class="it-n">Hamburguesa de la casa</span><span class="dots"></span><span class="it-p">$35.000</span></div>
+      <div class="it"><span class="it-n">Hamburguesa mixta</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+      <div class="it"><span class="it-n">Sándwich mixto con papas</span><span class="dots"></span><span class="it-p">$22.000</span></div>
+      <div class="it"><span class="it-n">Perro ranchero</span><span class="dots"></span><span class="it-p">$20.000</span></div>
+      <div class="it"><span class="it-n">Salchipapa ranchera</span><span class="dots"></span><span class="it-p">$20.000</span></div>
+      <div class="it"><span class="it-n">Salchipapa mixta<small>Carne y pollo</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Salchipapa trifásica<small>Todas las carnes</small></span><span class="dots"></span><span class="it-p">$40.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Bebidas</h3><div class="rule"></div></div>
+    <p class="cat-n">Jugos naturales, limonadas y gaseosa</p>
+    <div class="items">
+      <div class="it"><span class="it-n">Jugo natural personal</span><span class="dots"></span><span class="it-p">$8.000</span></div>
+      <div class="it"><span class="it-n">Limonada de coco</span><span class="dots"></span><span class="it-p">$16.000</span></div>
+      <div class="it"><span class="it-n">Limonada de hierbabuena</span><span class="dots"></span><span class="it-p">$10.000</span></div>
+      <div class="it"><span class="it-n">Jarra de limonada<small>1 litro</small></span><span class="dots"></span><span class="it-p">$16.000</span></div>
+      <div class="it"><span class="it-n">Jarra de limonada<small>1/2 litro</small></span><span class="dots"></span><span class="it-p">$13.000</span></div>
+      <div class="it"><span class="it-n">Gaseosa personal</span><span class="dots"></span><span class="it-p">$6.000</span></div>
+      <div class="it"><span class="it-n">Gaseosa<small>1.5 litros</small></span><span class="dots"></span><span class="it-p">$12.000</span></div>
+    </div>
+    <p class="tip">El bar tiene carta aparte: cerveza, cocteles, licor por botella y pecera</p>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="visita">
+  <div class="visita">
+    <div class="reveal">
+      <span class="eyebrow">Visítanos</span>
+      <h2>Te esperamos<br><span class="hl">en la playa</span></h2>
+      <div style="margin-top:2rem">
+        <div class="dato"><div class="dato-l">Dónde</div><div class="dato-v">Playa de El Rodadero<em>Santa Marta, Magdalena</em></div></div>
+        <div class="dato"><div class="dato-l">Horario</div><div class="dato-v">10:00 a.m. — 1:00 a.m.<em>Todos los días</em></div></div>
+        <div class="dato"><div class="dato-l">Reservas y domicilios</div><div class="dato-v">313 697 7712<em>Escríbenos por WhatsApp</em></div></div>
+        <div class="dato"><div class="dato-l">Pagos</div><div class="dato-v">Efectivo · Tarjeta · QR<em>Aceptamos todas las tarjetas</em></div></div>
+      </div>
+      <a class="btn btn-wa" href="https://wa.me/573136977712" target="_blank" rel="noopener" style="margin-top:1.8rem">Escríbenos ahora</a>
+    </div>
+    <div class="visita-img reveal"><img src="noche.jpg" alt="El Punto Marino de noche sobre la arena" loading="lazy"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">El Punto <b>Marino</b></div>
+  <p>Bar &amp; Restaurante · Playa de El Rodadero, Santa Marta<br>
+  Todos los días de 10:00 a.m. a 1:00 a.m. · WhatsApp 313 697 7712<br>
+  <span style="opacity:.55">@elpuntomarino1</span></p>
+</footer>
+
+<a class="wa" href="https://wa.me/573136977712" target="_blank" rel="noopener">
+  <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20"/></svg>
+  Escríbenos
+</a>
+
+<script>
+const pbg=document.getElementById('pbg'), nav=document.getElementById('nav');
+let ticking=false;
+addEventListener('scroll',()=>{
+  if(!ticking){requestAnimationFrame(()=>{
+    const y=scrollY;
+    pbg.style.transform='scale(1.1) translateY('+(y*0.3)+'px)';
+    nav.classList.toggle('solid', y>80);
+    ticking=false;
+  });ticking=true;}
+},{passive:true});
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+document.querySelectorAll('.gal figure').forEach(f=>{
+  f.addEventListener('mousemove',e=>{
+    const r=f.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    f.style.transform='translateY(-8px) rotateY('+(x*7)+'deg) rotateX('+(-y*7)+'deg) scale(1.02)';
+  });
+  f.addEventListener('mouseleave',()=>{f.style.transform=''});
+});
+</script>
+</body>
+</html>
