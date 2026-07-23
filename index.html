@@ -72,9 +72,11 @@ nav.solid .burger span{background:var(--tinta)}
 .mobile-menu.open{opacity:1;pointer-events:auto}
 .mobile-menu a{color:var(--arena);text-decoration:none;font-family:'Fraunces',serif;font-weight:600;font-size:1.9rem}
 .mobile-menu a:hover{color:var(--mango)}
-.mobile-menu .mm-social{display:flex;gap:1.4rem;margin-top:1rem}
-.mobile-menu .mm-social a{display:inline-flex}
-.mobile-menu .mm-social svg{width:30px;height:30px}
+.mobile-menu .mm-social{display:flex;gap:1.3rem;margin-top:1.4rem}
+.mobile-menu .mm-social a{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;color:#fff}
+.mobile-menu .mm-social a.ig{background:linear-gradient(45deg,#F58529 0%,#DD2A7B 45%,#8134AF 75%,#515BD4 100%)}
+.mobile-menu .mm-social a.fb{background:#1877F2}
+.mobile-menu .mm-social svg{width:28px;height:28px}
 @media(max-width:860px){.nav-links{display:none}.burger{display:flex}}
 
 /* HERO */
@@ -186,13 +188,13 @@ footer .logo{color:var(--arena);font-size:1.9rem;margin-bottom:.7rem}
 footer .logo b{color:var(--mango)}
 footer p{font-size:.87rem;font-weight:300;line-height:1.9}
 .social{display:flex;justify-content:center;gap:1rem;margin:1.4rem 0 .4rem}
-.social a{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;
-  background:rgba(255,246,232,.1);color:var(--arena);transition:.25s}
-.social a:hover{transform:translateY(-3px)}
-.social a.ig:hover{background:#E1306C;color:#fff}
-.social a.fb:hover{background:#1877F2;color:#fff}
-.social a.waf:hover{background:#25D366;color:#fff}
-.social svg{width:22px;height:22px}
+.social a{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;
+  color:#fff;transition:transform .25s,box-shadow .25s}
+.social a:hover{transform:translateY(-4px)}
+.social a.ig{background:linear-gradient(45deg,#F58529 0%,#DD2A7B 45%,#8134AF 75%,#515BD4 100%);box-shadow:0 8px 24px rgba(221,42,123,.45)}
+.social a.fb{background:#1877F2;box-shadow:0 8px 24px rgba(24,119,242,.45)}
+.social a.waf{background:#25D366;box-shadow:0 8px 24px rgba(37,211,102,.45)}
+.social svg{width:24px;height:24px}
 
 /* WHATSAPP */
 .wa{position:fixed;right:1.4rem;bottom:1.4rem;z-index:300;display:flex;align-items:center;gap:.6rem;
@@ -228,10 +230,10 @@ footer p{font-size:.87rem;font-weight:300;line-height:1.9}
   <a href="#carta">La carta</a>
   <a href="#visita">Visítanos</a>
   <div class="mm-social">
-    <a href="https://www.instagram.com/elpuntomarino1" target="_blank" rel="noopener" aria-label="Instagram">
+    <a class="ig" href="https://www.instagram.com/elpuntomarino1" target="_blank" rel="noopener" aria-label="Instagram">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1C2.6 9.9 2.6 10.3 2.6 12s0 2.1.1 3.3c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-3.3s0-2.1-.1-3.3c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1m0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8m0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4m6.3-8.3a1.1 1.1 0 1 1-2.3 0 1.1 1.1 0 0 1 2.3 0"/></svg>
     </a>
-    <a href="https://www.facebook.com/share/1En1deMX4W/" target="_blank" rel="noopener" aria-label="Facebook">
+    <a class="fb" href="https://www.facebook.com/share/1En1deMX4W/" target="_blank" rel="noopener" aria-label="Facebook">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12"/></svg>
     </a>
   </div>
@@ -413,21 +415,21 @@ footer p{font-size:.87rem;font-weight:300;line-height:1.9}
       <span class="eyebrow">Visítanos</span>
       <h2>Te esperamos<br><span class="hl">en la playa</span></h2>
       <div style="margin-top:2rem">
-        <div class="dato"><div class="dato-l">Dónde</div><div class="dato-v">Playa de El Rodadero<em>Santa Marta, Magdalena</em></div></div>
+        <div class="dato"><div class="dato-l">Dónde</div><div class="dato-v">Playa de El Rodadero<em>Carrera 1 #11-01 · Santa Marta, Magdalena</em></div></div>
         <div class="dato"><div class="dato-l">Horario</div><div class="dato-v">10:00 a.m. — 1:00 a.m.<em>Todos los días</em></div></div>
         <div class="dato"><div class="dato-l">Reservas y domicilios</div><div class="dato-v">313 697 7712<em>Escríbenos por WhatsApp</em></div></div>
         <div class="dato"><div class="dato-l">Pagos</div><div class="dato-v">Efectivo · Tarjeta · QR<em>Aceptamos todas las tarjetas</em></div></div>
       </div>
       <div class="hero-btns" style="justify-content:flex-start;margin-top:1.8rem">
         <a class="btn btn-wa" href="https://wa.me/573136977712?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20El%20Punto%20Marino" target="_blank" rel="noopener">Escríbenos ahora</a>
-        <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=El+Punto+Marino+El+Rodadero+Santa+Marta" target="_blank" rel="noopener">Cómo llegar</a>
+        <a class="btn btn-map" href="https://maps.app.goo.gl/cQVHG2n5qexkmeVr9" target="_blank" rel="noopener">Cómo llegar</a>
       </div>
     </div>
     <div class="visita-img reveal"><img src="noche.jpg" alt="El Punto Marino de noche sobre la arena" loading="lazy"></div>
   </div>
   <div class="mapa reveal">
     <iframe title="Ubicación de El Punto Marino en El Rodadero"
-      src="https://maps.google.com/maps?q=El%20Punto%20Marino%20El%20Rodadero%20Santa%20Marta&z=16&output=embed"
+      src="https://maps.google.com/maps?q=El%20Punto%20Marino%2C%20Carrera%201%20%2311-01%2C%20El%20Rodadero%2C%20Santa%20Marta&z=17&output=embed"
       loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </section>
@@ -506,7 +508,7 @@ mm.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>to
   "acceptsReservations":true,
   "address":{
     "@type":"PostalAddress",
-    "streetAddress":"Playa de El Rodadero",
+    "streetAddress":"Carrera 1 #11-01, El Rodadero",
     "addressLocality":"Santa Marta",
     "addressRegion":"Magdalena",
     "addressCountry":"CO"
