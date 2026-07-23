@@ -4,6 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>El Punto Marino — Bar &amp; Restaurante · El Rodadero, Santa Marta</title>
+<meta name="description" content="Bar &amp; Restaurante en la playa de El Rodadero, Santa Marta. Mariscos frescos, cazuelas, langosta, asados y cocteles con el mar de frente. Abierto todos los días de 10 a.m. a 1 a.m.">
+<meta name="theme-color" content="#062E3F">
+<link rel="canonical" href="https://punto-marino.vercel.app/">
+<link rel="preload" as="image" href="fachada.jpg" fetchpriority="high">
+
+<!-- Vista previa al compartir (WhatsApp, Facebook, Instagram) -->
+<meta property="og:type" content="restaurant">
+<meta property="og:site_name" content="El Punto Marino">
+<meta property="og:title" content="El Punto Marino — Bar &amp; Restaurante en El Rodadero">
+<meta property="og:description" content="Mariscos frescos, cazuelas y cocteles con el mar de frente. Playa de El Rodadero, Santa Marta. Todos los días 10 a.m. – 1 a.m.">
+<meta property="og:image" content="https://punto-marino.vercel.app/fachada.jpg">
+<meta property="og:image:alt" content="Fachada de El Punto Marino al atardecer">
+<meta property="og:url" content="https://punto-marino.vercel.app/">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="El Punto Marino — Bar &amp; Restaurante en El Rodadero">
+<meta name="twitter:description" content="Mariscos frescos, cazuelas y cocteles con el mar de frente en la playa de El Rodadero.">
+<meta name="twitter:image" content="https://punto-marino.vercel.app/fachada.jpg">
+
+<!-- Favicon tropical -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23062E3F'/%3E%3Ccircle cx='50' cy='40' r='20' fill='%23FFB627'/%3E%3Cpath d='M8 66c9-9 18-9 27 0s18 9 27 0 18-9 27 0' stroke='%2300A9A5' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3Cpath d='M8 82c9-9 18-9 27 0s18 9 27 0 18-9 27 0' stroke='%23FF5A3C' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Outfit:wght@200;300;400;600&display=swap" rel="stylesheet">
@@ -36,7 +58,24 @@ nav.solid .logo b{color:var(--coral)}
 nav.solid .nav-links a{color:var(--tinta);opacity:.7}
 .nav-links a:hover{opacity:1;color:var(--mango)}
 nav.solid .nav-links a:hover{color:var(--coral)}
-@media(max-width:860px){.nav-links{display:none}}
+
+/* HAMBURGUESA MÓVIL */
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:.4rem;z-index:220}
+.burger span{width:26px;height:2.5px;background:#fff;border-radius:3px;transition:.3s}
+nav.solid .burger span{background:var(--tinta)}
+.burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:210;background:linear-gradient(160deg,var(--profundo),var(--tinta));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;
+  opacity:0;pointer-events:none;transition:opacity .35s}
+.mobile-menu.open{opacity:1;pointer-events:auto}
+.mobile-menu a{color:var(--arena);text-decoration:none;font-family:'Fraunces',serif;font-weight:600;font-size:1.9rem}
+.mobile-menu a:hover{color:var(--mango)}
+.mobile-menu .mm-social{display:flex;gap:1.4rem;margin-top:1rem}
+.mobile-menu .mm-social a{display:inline-flex}
+.mobile-menu .mm-social svg{width:30px;height:30px}
+@media(max-width:860px){.nav-links{display:none}.burger{display:flex}}
 
 /* HERO */
 .hero{position:relative;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:center;justify-content:center;perspective:1000px}
@@ -92,6 +131,21 @@ h2 .hl{color:var(--turquesa)}
   background:linear-gradient(transparent,rgba(6,46,63,.9));font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem}
 @media(max-width:760px){.g1,.g2,.g3,.g4{grid-column:span 12;aspect-ratio:4/3}}
 
+/* COMIDA */
+#comida{background:
+  radial-gradient(ellipse 60% 40% at 85% 0%,rgba(255,90,60,.12),transparent 60%),
+  var(--arena)}
+.platos{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.1rem;margin-top:2.8rem}
+.plato{position:relative;overflow:hidden;border-radius:18px;aspect-ratio:4/5;box-shadow:0 16px 44px rgba(6,46,63,.2);
+  transition:transform .4s,box-shadow .4s}
+.plato:hover{transform:translateY(-6px);box-shadow:0 30px 66px rgba(6,46,63,.32)}
+.plato img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.plato:hover img{transform:scale(1.07)}
+.plato figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.6rem 1.2rem 1.1rem;color:#fff;z-index:2;
+  background:linear-gradient(transparent,rgba(6,46,63,.92))}
+.plato figcaption b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:1.12rem}
+.plato figcaption span{font-size:.82rem;font-weight:300;opacity:.85}
+
 /* CARTA */
 #carta{background:
   radial-gradient(ellipse 70% 45% at 15% 0%,rgba(255,182,39,.18),transparent 62%),
@@ -122,12 +176,23 @@ h2 .hl{color:var(--turquesa)}
 .visita-img{border-radius:18px;overflow:hidden;box-shadow:0 26px 66px rgba(6,46,63,.3);
   transform:rotateY(-5deg) rotateX(2deg);transition:transform .6s}
 .visita-img:hover{transform:rotateY(0) rotateX(0)}
+.btn-map{background:var(--turquesa);color:#fff;box-shadow:0 10px 36px rgba(0,169,165,.4);margin-top:1rem}
+.mapa{margin-top:1.4rem;border-radius:18px;overflow:hidden;box-shadow:0 20px 54px rgba(6,46,63,.25);border:0;line-height:0}
+.mapa iframe{width:100%;height:280px;border:0;display:block;filter:saturate(1.05)}
 
 /* FOOTER */
 footer{background:var(--profundo);color:rgba(255,246,232,.8);padding:3.4rem clamp(1rem,5vw,4rem) 7rem;text-align:center}
 footer .logo{color:var(--arena);font-size:1.9rem;margin-bottom:.7rem}
 footer .logo b{color:var(--mango)}
 footer p{font-size:.87rem;font-weight:300;line-height:1.9}
+.social{display:flex;justify-content:center;gap:1rem;margin:1.4rem 0 .4rem}
+.social a{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;
+  background:rgba(255,246,232,.1);color:var(--arena);transition:.25s}
+.social a:hover{transform:translateY(-3px)}
+.social a.ig:hover{background:#E1306C;color:#fff}
+.social a.fb:hover{background:#1877F2;color:#fff}
+.social a.waf:hover{background:#25D366;color:#fff}
+.social svg{width:22px;height:22px}
 
 /* WHATSAPP */
 .wa{position:fixed;right:1.4rem;bottom:1.4rem;z-index:300;display:flex;align-items:center;gap:.6rem;
@@ -148,10 +213,29 @@ footer p{font-size:.87rem;font-weight:300;line-height:1.9}
   <div class="logo">El Punto <b>Marino</b></div>
   <ul class="nav-links">
     <li><a href="#lugar">El lugar</a></li>
+    <li><a href="#comida">La comida</a></li>
     <li><a href="#carta">La carta</a></li>
     <li><a href="#visita">Visítanos</a></li>
   </ul>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#lugar">El lugar</a>
+  <a href="#comida">La comida</a>
+  <a href="#carta">La carta</a>
+  <a href="#visita">Visítanos</a>
+  <div class="mm-social">
+    <a href="https://instagram.com/elpuntomarino1" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1C2.6 9.9 2.6 10.3 2.6 12s0 2.1.1 3.3c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-3.3s0-2.1-.1-3.3c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1m0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8m0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4m6.3-8.3a1.1 1.1 0 1 1-2.3 0 1.1 1.1 0 0 1 2.3 0"/></svg>
+    </a>
+    <a href="https://facebook.com/elpuntomarino1" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12"/></svg>
+    </a>
+  </div>
+</div>
 
 <section class="hero">
   <div class="hero-bg" id="pbg" style="background-image:url('fachada.jpg')"></div>
@@ -160,7 +244,7 @@ footer p{font-size:.87rem;font-weight:300;line-height:1.9}
     <h1>Bar &amp; Restaurante<em>sobre la arena</em></h1>
     <p class="tagline">Mariscos frescos, cazuelas y cocteles con el mar de frente. Desde las 10 de la mañana hasta la 1 de la madrugada.</p>
     <div class="hero-btns">
-      <a class="btn btn-wa" href="https://wa.me/573136977712" target="_blank" rel="noopener">
+      <a class="btn btn-wa" href="https://wa.me/573136977712?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20El%20Punto%20Marino" target="_blank" rel="noopener">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20"/></svg>
         Pedir por WhatsApp
       </a>
@@ -188,6 +272,21 @@ footer p{font-size:.87rem;font-weight:300;line-height:1.9}
     <figure class="g2"><img src="neon.jpg" alt="Fachada iluminada de noche" loading="lazy"><figcaption>De noche, en neón</figcaption></figure>
     <figure class="g3"><img src="noche.jpg" alt="Terraza sobre la arena iluminada" loading="lazy"><figcaption>Terraza sobre la arena</figcaption></figure>
     <figure class="g4"><img src="fachada.jpg" alt="Entrada entre palmeras al atardecer" loading="lazy"><figcaption>La entrada, entre palmeras</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec" id="comida">
+  <div class="reveal">
+    <span class="eyebrow">La comida</span>
+    <h2>Lo que sale<br><span class="hl">de la cocina</span></h2>
+    <p class="lead">Del mar a la mesa: cazuelas, apanados crocantes, chicharrón y platos para compartir. Así se ve lo que servimos.</p>
+  </div>
+  <div class="platos reveal">
+    <figure class="plato"><img src="cazuela.jpg" alt="Cazuela de mariscos en pocillo de barro" loading="lazy"><figcaption><b>Cazuela de mariscos</b><span>En pocillo de barro, bien caliente</span></figcaption></figure>
+    <figure class="plato"><img src="apanados.jpg" alt="Camarones apanados crocantes" loading="lazy"><figcaption><b>Camarones apanados</b><span>Crocantes, con salsa de la casa</span></figcaption></figure>
+    <figure class="plato"><img src="chicharron.jpg" alt="Chicharrón con patacones" loading="lazy"><figcaption><b>Chicharrón con patacones</b><span>Para picar en la mesa</span></figcaption></figure>
+    <figure class="plato"><img src="fritos.jpg" alt="Apanados de la casa sobre lechuga" loading="lazy"><figcaption><b>Apanados de la casa</b><span>Recién salidos de la freidora</span></figcaption></figure>
+    <figure class="plato"><img src="salchipapa.jpg" alt="Salchipapa con salsa" loading="lazy"><figcaption><b>Salchipapa especial</b><span>Para la mesa que no quiere marisco</span></figcaption></figure>
   </div>
 </section>
 
@@ -319,20 +418,39 @@ footer p{font-size:.87rem;font-weight:300;line-height:1.9}
         <div class="dato"><div class="dato-l">Reservas y domicilios</div><div class="dato-v">313 697 7712<em>Escríbenos por WhatsApp</em></div></div>
         <div class="dato"><div class="dato-l">Pagos</div><div class="dato-v">Efectivo · Tarjeta · QR<em>Aceptamos todas las tarjetas</em></div></div>
       </div>
-      <a class="btn btn-wa" href="https://wa.me/573136977712" target="_blank" rel="noopener" style="margin-top:1.8rem">Escríbenos ahora</a>
+      <div class="hero-btns" style="justify-content:flex-start;margin-top:1.8rem">
+        <a class="btn btn-wa" href="https://wa.me/573136977712?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20El%20Punto%20Marino" target="_blank" rel="noopener">Escríbenos ahora</a>
+        <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=El+Punto+Marino+El+Rodadero+Santa+Marta" target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
     </div>
     <div class="visita-img reveal"><img src="noche.jpg" alt="El Punto Marino de noche sobre la arena" loading="lazy"></div>
+  </div>
+  <div class="mapa reveal">
+    <iframe title="Ubicación de El Punto Marino en El Rodadero"
+      src="https://maps.google.com/maps?q=El%20Punto%20Marino%20El%20Rodadero%20Santa%20Marta&z=16&output=embed"
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </section>
 
 <footer>
   <div class="logo">El Punto <b>Marino</b></div>
+  <div class="social">
+    <a class="ig" href="https://instagram.com/elpuntomarino1" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1C2.6 9.9 2.6 10.3 2.6 12s0 2.1.1 3.3c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-3.3s0-2.1-.1-3.3c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1m0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8m0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4m6.3-8.3a1.1 1.1 0 1 1-2.3 0 1.1 1.1 0 0 1 2.3 0"/></svg>
+    </a>
+    <a class="fb" href="https://facebook.com/elpuntomarino1" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12"/></svg>
+    </a>
+    <a class="waf" href="https://wa.me/573136977712?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20El%20Punto%20Marino" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20"/></svg>
+    </a>
+  </div>
   <p>Bar &amp; Restaurante · Playa de El Rodadero, Santa Marta<br>
   Todos los días de 10:00 a.m. a 1:00 a.m. · WhatsApp 313 697 7712<br>
-  <span style="opacity:.55">@elpuntomarino1</span></p>
+  <a href="https://instagram.com/elpuntomarino1" target="_blank" rel="noopener" style="color:var(--mango);text-decoration:none">@elpuntomarino1</a></p>
 </footer>
 
-<a class="wa" href="https://wa.me/573136977712" target="_blank" rel="noopener">
+<a class="wa" href="https://wa.me/573136977712?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20El%20Punto%20Marino" target="_blank" rel="noopener">
   <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20"/></svg>
   Escríbenos
 </a>
@@ -360,6 +478,50 @@ document.querySelectorAll('.gal figure').forEach(f=>{
   });
   f.addEventListener('mouseleave',()=>{f.style.transform=''});
 });
+
+// Menú móvil
+const burger=document.getElementById('burger'), mm=document.getElementById('mobileMenu');
+function toggleMenu(open){
+  const willOpen = open ?? !mm.classList.contains('open');
+  mm.classList.toggle('open',willOpen);
+  burger.classList.toggle('open',willOpen);
+  burger.setAttribute('aria-expanded',willOpen);
+  document.body.style.overflow = willOpen ? 'hidden' : '';
+}
+burger.addEventListener('click',()=>toggleMenu());
+mm.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Restaurant",
+  "name":"El Punto Marino",
+  "description":"Bar & Restaurante en la playa de El Rodadero, Santa Marta. Mariscos frescos, cazuelas, langosta, asados y cocteles.",
+  "servesCuisine":["Mariscos","Comida de mar","Colombiana"],
+  "priceRange":"$$",
+  "image":"https://punto-marino.vercel.app/fachada.jpg",
+  "url":"https://punto-marino.vercel.app/",
+  "telephone":"+573136977712",
+  "acceptsReservations":true,
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Playa de El Rodadero",
+    "addressLocality":"Santa Marta",
+    "addressRegion":"Magdalena",
+    "addressCountry":"CO"
+  },
+  "openingHoursSpecification":[{
+    "@type":"OpeningHoursSpecification",
+    "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens":"10:00",
+    "closes":"01:00"
+  }],
+  "sameAs":[
+    "https://instagram.com/elpuntomarino1",
+    "https://facebook.com/elpuntomarino1"
+  ]
+}
 </script>
 </body>
 </html>
