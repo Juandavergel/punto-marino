@@ -111,6 +111,12 @@ h2 .hl{color:var(--turquesa)}
 .dots{flex:1;border-bottom:1px dotted rgba(6,46,63,.28);transform:translateY(-5px)}
 .it-p{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--coral);white-space:nowrap}
 .tip{margin-top:.9rem;font-size:.8rem;font-weight:300;opacity:.6;font-style:italic}
+.grupo{display:flex;align-items:center;gap:1.1rem;margin:3.6rem 0 .4rem}
+.grupo:first-of-type{margin-top:2.6rem}
+.grupo::before,.grupo::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,transparent,rgba(0,169,165,.5),transparent)}
+.grupo b{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(1.7rem,4.4vw,2.6rem);color:var(--turquesa);letter-spacing:-.02em;white-space:nowrap}
+.grupo span{font-size:1.4rem}
+.subcat{font-family:'Fraunces',serif;font-weight:600;font-size:1rem;color:var(--turquesa);margin:.8rem 0 .2rem;grid-column:1/-1}
 
 /* VISITA */
 .visita{display:grid;grid-template-columns:1.05fr 1fr;gap:3rem;align-items:center}
@@ -195,115 +201,313 @@ footer p{font-size:.87rem;font-weight:300;line-height:1.9}
  <div class="carta-in">
   <div class="reveal">
     <span class="eyebrow">La carta</span>
-    <h2>Todo lo que sale<br><span class="hl">de la cocina</span></h2>
-    <p class="lead">Precios en pesos colombianos. Los mariscos van con arroz de coco o blanco, papas o patacones.</p>
+    <h2>Todo lo que<br><span class="hl">ofrecemos</span></h2>
+    <p class="lead">Dos cartas: la cocina de mar y el bar. Precios en pesos colombianos. Los pescados y mariscos van con arroz de coco o blanco, papas o patacones.</p>
   </div>
 
-  <div class="cat reveal">
-    <div class="cat-t"><h3>Para empezar</h3><div class="rule"></div></div>
-    <p class="cat-n">Lo que se pide apenas uno se sienta</p>
-    <div class="items">
-      <div class="it"><span class="it-n">Ceviche de camarón</span><span class="dots"></span><span class="it-p">$28.000</span></div>
-      <div class="it"><span class="it-n">Coctel de camarón</span><span class="dots"></span><span class="it-p">$25.000</span></div>
-      <div class="it"><span class="it-n">Chicharrón con yuca</span><span class="dots"></span><span class="it-p">$20.000</span></div>
-      <div class="it"><span class="it-n">Anillos de calamar</span><span class="dots"></span><span class="it-p">$20.000</span></div>
-    </div>
-  </div>
+  <div class="grupo reveal"><span>🐟</span><b>La cocina</b></div>
 
   <div class="cat reveal">
     <div class="cat-t"><h3>Menú del día</h3><div class="rule"></div></div>
-    <p class="cat-n">Todos con sopa de pescado, arroz de coco, patacones y ensalada</p>
+    <p class="cat-n">Todos a $30.000 · con sopa de pescado, arroz de coco, patacones y ensalada</p>
     <div class="items">
-      <div class="it"><span class="it-n">Menú mojarra<small>250 gr</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
-      <div class="it"><span class="it-n">Menú cojinúa<small>250 gr</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
-      <div class="it"><span class="it-n">Menú sierra<small>3 postas</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
-      <div class="it"><span class="it-n">Menú lebranche<small>3 postas</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
-      <div class="it"><span class="it-n">Menú pechuga<small>160 gr</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
-      <div class="it"><span class="it-n">Menú carne<small>160 gr</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
-      <div class="it"><span class="it-n">Menú cerdo<small>160 gr</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Mojarra pequeña<small>250 gr</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Cojinúa pequeña<small>250 gr</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Lebranche en medallones<small>3 und</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Sierra en medallones<small>3 und</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Lomo de carne<small>160 gr</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Lomo de cerdo<small>160 gr</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Filete de pechuga<small>160 gr</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
     </div>
   </div>
 
   <div class="cat reveal">
-    <div class="cat-t"><h3>Pescados de libra</h3><div class="rule"></div></div>
-    <p class="cat-n">500 gramos cada uno</p>
+    <div class="cat-t"><h3>Entradas para compartir</h3><div class="rule"></div></div>
+    <p class="cat-n">Para picar mientras llega el plato fuerte</p>
     <div class="items">
-      <div class="it"><span class="it-n">Mojarra</span><span class="dots"></span><span class="it-p">$45.000</span></div>
-      <div class="it"><span class="it-n">Lebranche</span><span class="dots"></span><span class="it-p">$45.000</span></div>
-      <div class="it"><span class="it-n">Sierra</span><span class="dots"></span><span class="it-p">$45.000</span></div>
-      <div class="it"><span class="it-n">Róbalo</span><span class="dots"></span><span class="it-p">$45.000</span></div>
-      <div class="it"><span class="it-n">Pargo rojo</span><span class="dots"></span><span class="it-p">$55.000</span></div>
+      <div class="it"><span class="it-n">Cóctel o ceviche de camarón</span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Cóctel o ceviche de marisco mixto</span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Ceviche de pescado</span><span class="dots"></span><span class="it-p">$25.000</span></div>
+      <div class="it"><span class="it-n">Chicharrones con yuca frita</span><span class="dots"></span><span class="it-p">$25.000</span></div>
+      <div class="it"><span class="it-n">Anillos de calamar</span><span class="dots"></span><span class="it-p">$25.000</span></div>
+      <div class="it"><span class="it-n">Patacones con queso, ahogado o suero</span><span class="dots"></span><span class="it-p">$20.000</span></div>
+      <div class="it"><span class="it-n">Yuca frita con queso</span><span class="dots"></span><span class="it-p">$20.000</span></div>
+      <div class="it"><span class="it-n">Croquetas de pescado</span><span class="dots"></span><span class="it-p">$20.000</span></div>
     </div>
-    <p class="tip">Frito o sudado suma $7.000</p>
   </div>
 
   <div class="cat reveal">
-    <div class="cat-t"><h3>Mariscos</h3><div class="rule"></div></div>
-    <p class="cat-n">Lo que nos trajo aquí</p>
+    <div class="cat-t"><h3>Ensaladas y sopas</h3><div class="rule"></div></div>
     <div class="items">
+      <div class="it"><span class="it-n">Ensalada de marisco mixto</span><span class="dots"></span><span class="it-p">$50.000</span></div>
+      <div class="it"><span class="it-n">Ensalada de camarón</span><span class="dots"></span><span class="it-p">$35.000</span></div>
+      <div class="it"><span class="it-n">Sancocho de costilla o pescado</span><span class="dots"></span><span class="it-p">$18.000</span></div>
+      <div class="it"><span class="it-n">Sopa pequeña de costilla o pescado</span><span class="dots"></span><span class="it-p">$10.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Cazuelas y mariscos</h3><div class="rule"></div></div>
+    <p class="cat-n">Con arroz de coco o patacones</p>
+    <div class="items">
+      <div class="subcat">La langosta de la casa · 300 gr</div>
       <div class="it"><span class="it-n">Langosta al ajillo o asada</span><span class="dots"></span><span class="it-p">$90.000</span></div>
-      <div class="it"><span class="it-n">Langosta en salsa de mariscos</span><span class="dots"></span><span class="it-p">$110.000</span></div>
-      <div class="it"><span class="it-n">Langosta en salsa de camarón</span><span class="dots"></span><span class="it-p">$100.000</span></div>
-      <div class="it"><span class="it-n">Langostinos al ajillo o apanados</span><span class="dots"></span><span class="it-p">$70.000</span></div>
-      <div class="it"><span class="it-n">Camarones al ajillo o apanados</span><span class="dots"></span><span class="it-p">$45.000</span></div>
-      <div class="it"><span class="it-n">Pulpo al ajillo o apanado</span><span class="dots"></span><span class="it-p">$60.000</span></div>
-      <div class="it"><span class="it-n">Cazuela de mariscos</span><span class="dots"></span><span class="it-p">$50.000</span></div>
-      <div class="it"><span class="it-n">Cazuela de mariscos gratinada</span><span class="dots"></span><span class="it-p">$55.000</span></div>
-      <div class="it"><span class="it-n">Cazuela especial con langostinos</span><span class="dots"></span><span class="it-p">$60.000</span></div>
-      <div class="it"><span class="it-n">Arroz con mariscos</span><span class="dots"></span><span class="it-p">$45.000</span></div>
-      <div class="it"><span class="it-n">Arroz con camarón</span><span class="dots"></span><span class="it-p">$45.000</span></div>
+      <div class="it"><span class="it-n">Langosta en salsa de camarones</span><span class="dots"></span><span class="it-p">$100.000</span></div>
+      <div class="it"><span class="it-n">Langosta en salsa de marisco</span><span class="dots"></span><span class="it-p">$110.000</span></div>
+      <div class="it"><span class="it-n">Langostinos al ajillo o apanados</span><span class="dots"></span><span class="it-p">$65.000</span></div>
+      <div class="it"><span class="it-n">Cazuela especial con langostinos<small>camarón o marisco mixto</small></span><span class="dots"></span><span class="it-p">$60.000</span></div>
+      <div class="it"><span class="it-n">Cazuela de marisco</span><span class="dots"></span><span class="it-p">$50.000</span></div>
+      <div class="it"><span class="it-n">Camarones al ajillo o apanados</span><span class="dots"></span><span class="it-p">$50.000</span></div>
+      <div class="it"><span class="it-n">Pulpo al ajillo o apanado</span><span class="dots"></span><span class="it-p">$50.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Pescados a la carta</h3><div class="rule"></div></div>
+    <p class="cat-n">500 gr · con ensalada, patacones y arroz</p>
+    <div class="items">
+      <div class="it"><span class="it-n">Pargo rojo frito</span><span class="dots"></span><span class="it-p">$60.000</span></div>
+      <div class="it"><span class="it-n">Róbalo</span><span class="dots"></span><span class="it-p">$50.000</span></div>
+      <div class="it"><span class="it-n">Lebranche</span><span class="dots"></span><span class="it-p">$50.000</span></div>
+      <div class="it"><span class="it-n">Sierra</span><span class="dots"></span><span class="it-p">$50.000</span></div>
+      <div class="it"><span class="it-n">Mojarra</span><span class="dots"></span><span class="it-p">$50.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Filetes a la plancha</h3><div class="rule"></div></div>
+    <div class="items">
+      <div class="subcat">Filete de róbalo</div>
+      <div class="it"><span class="it-n">En salsa de camarones</span><span class="dots"></span><span class="it-p">$50.000</span></div>
+      <div class="it"><span class="it-n">A la marinera</span><span class="dots"></span><span class="it-p">$50.000</span></div>
+      <div class="it"><span class="it-n">Apanado</span><span class="dots"></span><span class="it-p">$45.000</span></div>
+      <div class="it"><span class="it-n">Al ajillo</span><span class="dots"></span><span class="it-p">$40.000</span></div>
+      <div class="subcat">Filete de salmón</div>
+      <div class="it"><span class="it-n">A la plancha</span><span class="dots"></span><span class="it-p">$55.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Arroces marineros</h3><div class="rule"></div></div>
+    <div class="items">
       <div class="it"><span class="it-n">Arroz de langostinos</span><span class="dots"></span><span class="it-p">$50.000</span></div>
+      <div class="it"><span class="it-n">Arroz con marisco</span><span class="dots"></span><span class="it-p">$45.000</span></div>
+      <div class="it"><span class="it-n">Arroz de camarones</span><span class="dots"></span><span class="it-p">$45.000</span></div>
     </div>
   </div>
 
   <div class="cat reveal">
     <div class="cat-t"><h3>Asados a la parrilla</h3><div class="rule"></div></div>
-    <p class="cat-n">Para el que viene por la brasa</p>
+    <p class="cat-n">Todos con papa a la francesa y ensalada</p>
     <div class="items">
-      <div class="it"><span class="it-n">Pechuga a la parrilla<small>250 gr · arroz de coco, patacones y ensalada</small></span><span class="dots"></span><span class="it-p">$34.000</span></div>
-      <div class="it"><span class="it-n">Carne a la parrilla<small>250 gr · arroz de coco, patacones y ensalada</small></span><span class="dots"></span><span class="it-p">$34.000</span></div>
-      <div class="it"><span class="it-n">Churrasco lomo ancho<small>400 gr · ensalada y papa a la francesa</small></span><span class="dots"></span><span class="it-p">$43.000</span></div>
-      <div class="it"><span class="it-n">Bandeja mixta<small>Carne y pechuga, o carne y cerdo</small></span><span class="dots"></span><span class="it-p">$34.000</span></div>
+      <div class="it"><span class="it-n">Churrasco lomo ancho en mariposa<small>400 gr</small></span><span class="dots"></span><span class="it-p">$50.000</span></div>
+      <div class="it"><span class="it-n">Costillas de cerdo BBQ<small>400 gr</small></span><span class="dots"></span><span class="it-p">$40.000</span></div>
+      <div class="it"><span class="it-n">Bandeja mixta dos proteínas<small>300 gr</small></span><span class="dots"></span><span class="it-p">$40.000</span></div>
+      <div class="it"><span class="it-n">Lomo de cerdo a la parrilla o BBQ<small>250 gr</small></span><span class="dots"></span><span class="it-p">$36.000</span></div>
+      <div class="it"><span class="it-n">Lomo ancho a la parrilla<small>250 gr</small></span><span class="dots"></span><span class="it-p">$36.000</span></div>
+      <div class="it"><span class="it-n">Filete de pechuga parrilla o apanada<small>250 gr</small></span><span class="dots"></span><span class="it-p">$36.000</span></div>
     </div>
   </div>
 
   <div class="cat reveal">
-    <div class="cat-t"><h3>Pastas</h3><div class="rule"></div></div>
-    <p class="cat-n">Hechas al momento</p>
+    <div class="cat-t"><h3>Pastas y lasañas</h3><div class="rule"></div></div>
     <div class="items">
-      <div class="it"><span class="it-n">Pasta en salsa de mariscos</span><span class="dots"></span><span class="it-p">$30.000</span></div>
-      <div class="it"><span class="it-n">Pasta en salsa de camarón</span><span class="dots"></span><span class="it-p">$30.000</span></div>
-      <div class="it"><span class="it-n">Pasta Alfredo con pollo</span><span class="dots"></span><span class="it-p">$25.000</span></div>
+      <div class="it"><span class="it-n">Pasta en salsa de marisco</span><span class="dots"></span><span class="it-p">$35.000</span></div>
+      <div class="it"><span class="it-n">Pasta en salsa de camarón</span><span class="dots"></span><span class="it-p">$35.000</span></div>
+      <div class="it"><span class="it-n">Pasta con pollo</span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Pasta con carne boloñesa</span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Lasaña mixta</span><span class="dots"></span><span class="it-p">$45.000</span></div>
+      <div class="it"><span class="it-n">Lasaña de carne</span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Lasaña de pollo</span><span class="dots"></span><span class="it-p">$30.000</span></div>
     </div>
   </div>
 
   <div class="cat reveal">
-    <div class="cat-t"><h3>Comida rápida</h3><div class="rule"></div></div>
-    <p class="cat-n">Para la mesa que no quiere marisco</p>
+    <div class="cat-t"><h3>Comidas rápidas</h3><div class="rule"></div></div>
+    <p class="cat-n">Todas acompañadas con papas</p>
     <div class="items">
-      <div class="it"><span class="it-n">Hamburguesa de la casa</span><span class="dots"></span><span class="it-p">$35.000</span></div>
-      <div class="it"><span class="it-n">Hamburguesa mixta</span><span class="dots"></span><span class="it-p">$26.000</span></div>
-      <div class="it"><span class="it-n">Sándwich mixto con papas</span><span class="dots"></span><span class="it-p">$22.000</span></div>
-      <div class="it"><span class="it-n">Perro ranchero</span><span class="dots"></span><span class="it-p">$20.000</span></div>
-      <div class="it"><span class="it-n">Salchipapa ranchera</span><span class="dots"></span><span class="it-p">$20.000</span></div>
-      <div class="it"><span class="it-n">Salchipapa mixta<small>Carne y pollo</small></span><span class="dots"></span><span class="it-p">$30.000</span></div>
-      <div class="it"><span class="it-n">Salchipapa trifásica<small>Todas las carnes</small></span><span class="dots"></span><span class="it-p">$40.000</span></div>
+      <div class="subcat">Hamburguesas</div>
+      <div class="it"><span class="it-n">De la casa</span><span class="dots"></span><span class="it-p">$40.000</span></div>
+      <div class="it"><span class="it-n">Mixta</span><span class="dots"></span><span class="it-p">$30.000</span></div>
+      <div class="it"><span class="it-n">Carne, pollo o cerdo</span><span class="dots"></span><span class="it-p">$25.000</span></div>
+      <div class="subcat">Salchipapas</div>
+      <div class="it"><span class="it-n">Trifásica</span><span class="dots"></span><span class="it-p">$40.000</span></div>
+      <div class="it"><span class="it-n">Pollo ranchera</span><span class="dots"></span><span class="it-p">$28.000</span></div>
+      <div class="it"><span class="it-n">Sencilla</span><span class="dots"></span><span class="it-p">$20.000</span></div>
+      <div class="subcat">Sándwiches</div>
+      <div class="it"><span class="it-n">Mixto</span><span class="dots"></span><span class="it-p">$25.000</span></div>
+      <div class="it"><span class="it-n">De carne</span><span class="dots"></span><span class="it-p">$23.000</span></div>
+      <div class="it"><span class="it-n">De pollo</span><span class="dots"></span><span class="it-p">$22.000</span></div>
+      <div class="it"><span class="it-n">De jamón</span><span class="dots"></span><span class="it-p">$20.000</span></div>
+      <div class="subcat">Perros y desgranados</div>
+      <div class="it"><span class="it-n">Desgranado mixto</span><span class="dots"></span><span class="it-p">$32.000</span></div>
+      <div class="it"><span class="it-n">Desgranado carne o pollo</span><span class="dots"></span><span class="it-p">$25.000</span></div>
+      <div class="it"><span class="it-n">Perro ranchero</span><span class="dots"></span><span class="it-p">$17.000</span></div>
+      <div class="it"><span class="it-n">Perro sencillo</span><span class="dots"></span><span class="it-p">$15.000</span></div>
     </div>
   </div>
 
   <div class="cat reveal">
-    <div class="cat-t"><h3>Bebidas</h3><div class="rule"></div></div>
-    <p class="cat-n">Jugos naturales, limonadas y gaseosa</p>
+    <div class="cat-t"><h3>Adicionales y menú infantil</h3><div class="rule"></div></div>
     <div class="items">
-      <div class="it"><span class="it-n">Jugo natural personal</span><span class="dots"></span><span class="it-p">$8.000</span></div>
-      <div class="it"><span class="it-n">Limonada de coco</span><span class="dots"></span><span class="it-p">$16.000</span></div>
-      <div class="it"><span class="it-n">Limonada de hierbabuena</span><span class="dots"></span><span class="it-p">$10.000</span></div>
-      <div class="it"><span class="it-n">Jarra de limonada<small>1 litro</small></span><span class="dots"></span><span class="it-p">$16.000</span></div>
-      <div class="it"><span class="it-n">Jarra de limonada<small>1/2 litro</small></span><span class="dots"></span><span class="it-p">$13.000</span></div>
+      <div class="it"><span class="it-n">Menú infantil: nuggets con papas</span><span class="dots"></span><span class="it-p">$20.000</span></div>
+      <div class="it"><span class="it-n">Porción de patacones</span><span class="dots"></span><span class="it-p">$8.000</span></div>
+      <div class="it"><span class="it-n">Pescado asado</span><span class="dots"></span><span class="it-p">$6.000</span></div>
+      <div class="it"><span class="it-n">Pescado sudado</span><span class="dots"></span><span class="it-p">$6.000</span></div>
+      <div class="it"><span class="it-n">Arroz de coco o blanco</span><span class="dots"></span><span class="it-p">$6.000</span></div>
+      <div class="it"><span class="it-n">Porción de papas</span><span class="dots"></span><span class="it-p">$6.000</span></div>
+      <div class="it"><span class="it-n">Porción de asado o gratinado</span><span class="dots"></span><span class="it-p">$6.000</span></div>
+      <div class="it"><span class="it-n">Porción de galletas</span><span class="dots"></span><span class="it-p">$4.000</span></div>
+    </div>
+  </div>
+
+  <div class="grupo reveal"><span>🍹</span><b>El bar</b></div>
+  <p class="lead reveal" style="margin-top:.4rem">Bien frío, frente al mar · cocteles, jugos y micheladas.</p>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Servidos en la fruta</h3><div class="rule"></div></div>
+    <p class="cat-n">Dentro del coco y de la piña</p>
+    <div class="items">
+      <div class="it"><span class="it-n">Coco loco</span><span class="dots"></span><span class="it-p">$40.000</span></div>
+      <div class="it"><span class="it-n">Piña colada</span><span class="dots"></span><span class="it-p">$40.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Cocteles</h3><div class="rule"></div></div>
+    <div class="items">
+      <div class="it"><span class="it-n">Margarita</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+      <div class="it"><span class="it-n">Mojito</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+      <div class="it"><span class="it-n">Daiquiri</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+      <div class="it"><span class="it-n">Gin tonic</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+      <div class="it"><span class="it-n">Cuba libre</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+      <div class="it"><span class="it-n">Tequila sunrise</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Micheladas decoradas</h3><div class="rule"></div></div>
+    <div class="items">
+      <div class="it"><span class="it-n">Frutos rojos</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+      <div class="it"><span class="it-n">Maracuyá</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+      <div class="it"><span class="it-n">Mango biche</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+      <div class="it"><span class="it-n">Fresa</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+      <div class="it"><span class="it-n">Cereza</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Granizados</h3><div class="rule"></div></div>
+    <div class="items">
+      <div class="it"><span class="it-n">Smirnoff</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+      <div class="it"><span class="it-n">Bombombún</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+      <div class="it"><span class="it-n">Chicle</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+      <div class="it"><span class="it-n">Mango biche</span><span class="dots"></span><span class="it-p">$26.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Limonadas</h3><div class="rule"></div></div>
+    <div class="items">
+      <div class="it"><span class="it-n">Limonada de coco</span><span class="dots"></span><span class="it-p">$17.000</span></div>
+      <div class="it"><span class="it-n">Limonada cerezada</span><span class="dots"></span><span class="it-p">$12.000</span></div>
+      <div class="it"><span class="it-n">Limonada de hierbabuena</span><span class="dots"></span><span class="it-p">$12.000</span></div>
+      <div class="it"><span class="it-n">Limonada natural</span><span class="dots"></span><span class="it-p">$10.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Jugos naturales</h3><div class="rule"></div></div>
+    <p class="cat-n">Guanábana · mango · mora · maracuyá · lulo · zapote · mandarina · fresa · piña · cereza</p>
+    <div class="items">
+      <div class="it"><span class="it-n">Jugo natural en agua</span><span class="dots"></span><span class="it-p">$12.000</span></div>
+      <div class="it"><span class="it-n">Jugo natural en leche</span><span class="dots"></span><span class="it-p">$13.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Cervezas</h3><div class="rule"></div></div>
+    <div class="items">
+      <div class="it"><span class="it-n">Smirnoff</span><span class="dots"></span><span class="it-p">$13.000</span></div>
+      <div class="it"><span class="it-n">Corona</span><span class="dots"></span><span class="it-p">$12.000</span></div>
+      <div class="it"><span class="it-n">Heineken</span><span class="dots"></span><span class="it-p">$12.000</span></div>
+      <div class="it"><span class="it-n">Stella Artois</span><span class="dots"></span><span class="it-p">$12.000</span></div>
+      <div class="it"><span class="it-n">Costeña</span><span class="dots"></span><span class="it-p">$8.000</span></div>
+      <div class="it"><span class="it-n">Club Colombia</span><span class="dots"></span><span class="it-p">$8.000</span></div>
+      <div class="it"><span class="it-n">Águila o Poker</span><span class="dots"></span><span class="it-p">$6.000</span></div>
+      <div class="it"><span class="it-n">Costeñita o Coronita</span><span class="dots"></span><span class="it-p">$6.000</span></div>
+      <div class="it"><span class="it-n">Heineken pequeña</span><span class="dots"></span><span class="it-p">$6.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Bien fría</h3><div class="rule"></div></div>
+    <p class="cat-n">Recién salida de la nevera</p>
+    <div class="items">
+      <div class="it"><span class="it-n">Coronita</span><span class="dots"></span><span class="it-p">$6.000</span></div>
+      <div class="it"><span class="it-n">Águila o Poker</span><span class="dots"></span><span class="it-p">$6.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Botellas</h3><div class="rule"></div></div>
+    <p class="cat-n">Para la mesa, frente al mar</p>
+    <div class="items">
+      <div class="subcat">Aguardiente · azul, verde o rojo</div>
+      <div class="it"><span class="it-n">Botella<small>750 ml</small></span><span class="dots"></span><span class="it-p">$130.000</span></div>
+      <div class="it"><span class="it-n">Media<small>375 ml</small></span><span class="dots"></span><span class="it-p">$80.000</span></div>
+      <div class="subcat">Ron · Caldas, Medellín o Bacardí</div>
+      <div class="it"><span class="it-n">Botella<small>750 ml</small></span><span class="dots"></span><span class="it-p">$130.000</span></div>
+      <div class="it"><span class="it-n">Media<small>375 ml</small></span><span class="dots"></span><span class="it-p">$80.000</span></div>
+      <div class="subcat">Whisky</div>
+      <div class="it"><span class="it-n">Buchanan's Deluxe<small>750 ml</small></span><span class="dots"></span><span class="it-p">$300.000</span></div>
+      <div class="it"><span class="it-n">Buchanan's Deluxe<small>375 ml</small></span><span class="dots"></span><span class="it-p">$200.000</span></div>
+      <div class="it"><span class="it-n">Old Parr<small>750 ml</small></span><span class="dots"></span><span class="it-p">$300.000</span></div>
+      <div class="it"><span class="it-n">Old Parr<small>375 ml</small></span><span class="dots"></span><span class="it-p">$200.000</span></div>
+      <div class="subcat">Tequila</div>
+      <div class="it"><span class="it-n">Jimador<small>750 ml</small></span><span class="dots"></span><span class="it-p">$220.000</span></div>
+      <div class="it"><span class="it-n">José Cuervo<small>750 ml</small></span><span class="dots"></span><span class="it-p">$190.000</span></div>
+      <div class="it"><span class="it-n">Olmeca Silver<small>750 ml</small></span><span class="dots"></span><span class="it-p">$160.000</span></div>
+      <div class="it"><span class="it-n">Olmeca Silver<small>375 ml</small></span><span class="dots"></span><span class="it-p">$90.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Shots</h3><div class="rule"></div></div>
+    <div class="items">
+      <div class="it"><span class="it-n">Aguardiente, ron, tequila o vodka</span><span class="dots"></span><span class="it-p">$15.000</span></div>
+      <div class="it"><span class="it-n">Buchanan's o Old Parr</span><span class="dots"></span><span class="it-p">$45.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Para compartir en la mesa</h3><div class="rule"></div></div>
+    <p class="cat-n">Para bajar el almuerzo, bien frío</p>
+    <div class="items">
+      <div class="it"><span class="it-n">Jarra de limonada</span><span class="dots"></span><span class="it-p">$20.000</span></div>
+      <div class="it"><span class="it-n">Media jarra</span><span class="dots"></span><span class="it-p">$15.000</span></div>
+      <div class="it"><span class="it-n">Gaseosa<small>1.5 L</small></span><span class="dots"></span><span class="it-p">$12.000</span></div>
+    </div>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Gaseosas y agua</h3><div class="rule"></div></div>
+    <div class="items">
+      <div class="it"><span class="it-n">Electrolit</span><span class="dots"></span><span class="it-p">$15.000</span></div>
+      <div class="it"><span class="it-n">Postobón o Coca-Cola<small>1.5 L</small></span><span class="dots"></span><span class="it-p">$12.000</span></div>
       <div class="it"><span class="it-n">Gaseosa personal</span><span class="dots"></span><span class="it-p">$6.000</span></div>
-      <div class="it"><span class="it-n">Gaseosa<small>1.5 litros</small></span><span class="dots"></span><span class="it-p">$12.000</span></div>
+      <div class="it"><span class="it-n">Soda saborizada</span><span class="dots"></span><span class="it-p">$6.000</span></div>
+      <div class="it"><span class="it-n">Botella de agua</span><span class="dots"></span><span class="it-p">$6.000</span></div>
     </div>
-    <p class="tip">El bar tiene carta aparte: cerveza, cocteles, licor por botella y pecera</p>
+  </div>
+
+  <div class="cat reveal">
+    <div class="cat-t"><h3>Decora tu bebida</h3><div class="rule"></div></div>
+    <div class="items">
+      <div class="it"><span class="it-n">Fruta para decorar, c/u<small>cereza, fresa o maracuyá</small></span><span class="dots"></span><span class="it-p">$4.000</span></div>
+      <div class="it"><span class="it-n">Sal y tajín</span><span class="dots"></span><span class="it-p">$2.500</span></div>
+    </div>
+    <p class="tip">Estos son nuestros únicos precios · Pagos con datáfono tienen un recargo del 5%</p>
   </div>
  </div>
 </section>
