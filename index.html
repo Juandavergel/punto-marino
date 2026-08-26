@@ -3,6 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '893359253567870');
+fbq('track', 'PageView');
+/* Mide los clics al boton de WhatsApp como evento Contact */
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[href*="wa.me"]');
+  if (a && window.fbq) { fbq('track', 'Contact'); }
+}, true);
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=893359253567870&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 <title>El Punto Marino — Bar &amp; Restaurante · El Rodadero, Santa Marta</title>
 <meta name="description" content="Bar &amp; Restaurante en la playa de El Rodadero, Santa Marta. Mariscos frescos, cazuelas, langosta, asados y cocteles con el mar de frente. Abierto todos los días de 10 a.m. a 1 a.m.">
 <meta name="theme-color" content="#062E3F">
